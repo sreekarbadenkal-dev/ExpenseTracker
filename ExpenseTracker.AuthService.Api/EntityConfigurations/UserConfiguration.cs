@@ -1,8 +1,8 @@
-﻿using ExpenseTracker.Api.Entities;
+﻿using ExpenseTracker.AuthService.Api.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace ExpenseTracker.Api.EntityConfigurations
+namespace ExpenseTracker.AuthService.Api.EntityConfigurations
 {
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {

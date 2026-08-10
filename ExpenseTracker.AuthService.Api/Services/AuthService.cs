@@ -1,16 +1,16 @@
-﻿using ExpenseTracker.Api.Data;
-using ExpenseTracker.Api.DTOs;
+﻿using ExpenseTracker.AuthService.Api.Data;
+using ExpenseTracker.AuthService.Api.DTOs;
 using Microsoft.EntityFrameworkCore;
-using ExpenseTracker.Api.Exceptions;
+using ExpenseTracker.AuthService.Api.Exceptions;
 using System.Security.Claims;
-using ExpenseTracker.Api.Entities;
+using ExpenseTracker.AuthService.Api.Entities;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 
-namespace ExpenseTracker.Api.Services
+namespace ExpenseTracker.AuthService.Api.Services
 {
-    public class AuthService(ExpenseTrackerDbContext _db,IConfiguration configuration,IOtpService otpService)
+    public class AuthenticationService(ExpenseTrackerDbContext _db,IConfiguration configuration,IOtpService otpService,IEmailService emailService)
     {
 
         public async Task<User?> FindUserByEmail(string email)
@@ -26,7 +26,8 @@ namespace ExpenseTracker.Api.Services
                 new Claim(ClaimTypes.Email,userdata.Email)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtCred:key"]));
+            var jwtkey = configuration["JwtCred:key"] ?? throw new InvalidOperationException("JWT key is not configured.");
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtkey));
 
             var credentials = new SigningCredentials(key,SecurityAlgorithms.HmacSha256);
 
@@ -59,6 +60,7 @@ namespace ExpenseTracker.Api.Services
 
             Console.WriteLine($"OTP for {user.Email}: {otp}");
 
+            await emailService.SendVerificationEmailAsync(user.Email,otp);
 
             return jwtToken;
 
@@ -101,7 +103,7 @@ namespace ExpenseTracker.Api.Services
             if (!(isValidOtpRes)) throw new AuthException(400, "Invalid or Expired Otp", 1);
 
             user.EmailVerifiedAt = DateTime.UtcNow;
-            user.LastUpdatedAt = DateTime.UtcNow;
+            //user.LastUpdatedAt = DateTime.UtcNow;
 
             await _db.SaveChangesAsync();
 

@@ -2,7 +2,7 @@
 using System.Text;
 using StackExchange.Redis;
 
-namespace ExpenseTracker.Api.Services
+namespace ExpenseTracker.AuthService.Api.Services
 {
     public class OtpService(IConnectionMultiplexer redis):IOtpService
     {

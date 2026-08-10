@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ExpenseTracker.Api.DTOs;
-using ExpenseTracker.Api.Services;
+using ExpenseTracker.AuthService.Api.DTOs;
+using ExpenseTracker.AuthService.Api.Services;
 
-namespace ExpenseTracker.Api.Controllers
+namespace ExpenseTracker.AuthService.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AuthController(AuthService authService) : ControllerBase
+    public class AuthController(AuthenticationService authService) : ControllerBase
     {
 
         [HttpPost("registration")]
@@ -19,7 +19,7 @@ namespace ExpenseTracker.Api.Controllers
             return Ok(new { message = "Registration Successfull", code = 1 });
         }
 
-        [HttpPost("registration/verfiyOtp")]
+        [HttpPost("registration/verifyOtp")]
         public async Task<IActionResult> VerifyOtp(AuthRequestVerificationDto authRequest)
         {
             if(await authService.VerifyEmail(authRequest)) return Ok(new { message = "Registration Successfull", code = 1 });

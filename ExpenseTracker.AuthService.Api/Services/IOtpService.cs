@@ -1,4 +1,4 @@
-﻿namespace ExpenseTracker.Api.Services
+﻿namespace ExpenseTracker.AuthService.Api.Services
 {
     public interface IOtpService
     {

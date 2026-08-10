@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ExpenseTracker.Api.Entities;
+using ExpenseTracker.AuthService.Api.Entities;
     
-namespace ExpenseTracker.Api.Data
+namespace ExpenseTracker.AuthService.Api.Data
 {
     public class ExpenseTrackerDbContext : DbContext
     {

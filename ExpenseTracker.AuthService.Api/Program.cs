@@ -1,7 +1,7 @@
-using ExpenseTracker.Api.Data;
-using ExpenseTracker.Api.Exceptions;
-using ExpenseTracker.Api.Middleware;
-using ExpenseTracker.Api.Services;
+using ExpenseTracker.AuthService.Api.Data;
+using ExpenseTracker.AuthService.Api.Exceptions;
+using ExpenseTracker.AuthService.Api.Middleware;
+using ExpenseTracker.AuthService.Api.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
@@ -19,9 +19,11 @@ builder.Services.AddDbContext<ExpenseTrackerDbContext>(options => options.UseSql
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis")!));
 
 builder.Services.Configure<ApiBehaviorOptions>(options => { options.InvalidModelStateResponseFactory = context => { throw new AuthException(400, "Invalid request", 0 ); }; });
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("Email"));
 
-builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<AuthenticationService>();
 builder.Services.AddScoped<IOtpService, OtpService>();
+builder.Services.AddScoped<IEmailService, EmailService>();  
 
 var app = builder.Build();
 

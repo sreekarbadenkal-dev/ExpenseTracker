@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ExpenseTracker.Api.DTOs
+namespace ExpenseTracker.AuthService.Api.DTOs
 {
     public class AuthRequestDto
     {

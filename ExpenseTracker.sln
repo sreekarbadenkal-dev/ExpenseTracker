@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.Api", "ExpenseTracker.Api\ExpenseTracker.Api.csproj", "{EEE66537-7D1F-4AA9-82AA-50AF12FE9560}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.AuthService.Api", "ExpenseTracker.AuthService.Api\ExpenseTracker.AuthService.Api.csproj", "{93F8BE39-5E36-4702-C257-DF9823CA6816}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EEE66537-7D1F-4AA9-82AA-50AF12FE9560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EEE66537-7D1F-4AA9-82AA-50AF12FE9560}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EEE66537-7D1F-4AA9-82AA-50AF12FE9560}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EEE66537-7D1F-4AA9-82AA-50AF12FE9560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93F8BE39-5E36-4702-C257-DF9823CA6816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93F8BE39-5E36-4702-C257-DF9823CA6816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93F8BE39-5E36-4702-C257-DF9823CA6816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93F8BE39-5E36-4702-C257-DF9823CA6816}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15B66BC9-AD85-4DCB-A5EB-F33939A37574}
 	EndGlobalSection
 EndGlobal

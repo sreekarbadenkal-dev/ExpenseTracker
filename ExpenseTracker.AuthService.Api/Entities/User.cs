@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace ExpenseTracker.Api.Entities
+namespace ExpenseTracker.AuthService.Api.Entities
 {
     [Index(nameof(UserId), IsUnique=true)]
     [Index(nameof(Email), IsUnique=true)]

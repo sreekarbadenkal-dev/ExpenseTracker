@@ -1,4 +1,4 @@
-﻿namespace ExpenseTracker.Api.Exceptions
+﻿namespace ExpenseTracker.AuthService.Api.Exceptions
 {
     public class AuthException(int statusCode,string message,int resultCode) : Exception(message)
     {

@@ -1,6 +1,6 @@
-﻿using ExpenseTracker.Api.Exceptions;
+﻿using ExpenseTracker.AuthService.Api.Exceptions;
 
-namespace ExpenseTracker.Api.Middleware
+namespace ExpenseTracker.AuthService.Api.Middleware
 {
     public class ExceptionMiddleware(RequestDelegate next,ILogger<ExceptionMiddleware> logger)
     {

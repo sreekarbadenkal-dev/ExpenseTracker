@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ExpenseTracker.Api.Migrations
+namespace ExpenseTracker.AuthService.Api.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
