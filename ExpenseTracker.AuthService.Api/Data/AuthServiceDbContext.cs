@@ -3,9 +3,9 @@ using ExpenseTracker.AuthService.Api.Entities;
     
 namespace ExpenseTracker.AuthService.Api.Data
 {
-    public class ExpenseTrackerDbContext : DbContext
+    public class AuthServiceDbContext : DbContext
     {
-        public ExpenseTrackerDbContext(DbContextOptions<ExpenseTrackerDbContext>
+        public AuthServiceDbContext(DbContextOptions<AuthServiceDbContext>
             options) : base(options) { }
 
         public DbSet<User> Users => Set<User>();

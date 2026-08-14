@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ExpenseTracker.AuthService.Api.Migrations
 {
-    [DbContext(typeof(ExpenseTrackerDbContext))]
+    [DbContext(typeof(AuthServiceDbContext))]
     [Migration("20260809075543_InitialCreate")]
     partial class InitialCreate
     {

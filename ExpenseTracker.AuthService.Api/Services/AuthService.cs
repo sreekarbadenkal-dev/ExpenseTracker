@@ -10,7 +10,7 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace ExpenseTracker.AuthService.Api.Services
 {
-    public class AuthenticationService(ExpenseTrackerDbContext _db,IConfiguration configuration,IOtpService otpService,IEmailService emailService)
+    public class AuthenticationService(AuthServiceDbContext _db,IConfiguration configuration,IOtpService otpService,IEmailService emailService)
     {
 
         public async Task<User?> FindUserByEmail(string email)

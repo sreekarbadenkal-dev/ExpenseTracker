@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ExpenseTracker.AuthService.Api.Migrations
 {
-    [DbContext(typeof(ExpenseTrackerDbContext))]
+    [DbContext(typeof(AuthServiceDbContext))]
     partial class ExpenseTrackerDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

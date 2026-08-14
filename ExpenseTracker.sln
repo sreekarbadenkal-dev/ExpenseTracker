@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.AuthService.Api", "ExpenseTracker.AuthService.Api\ExpenseTracker.AuthService.Api.csproj", "{93F8BE39-5E36-4702-C257-DF9823CA6816}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpenseTracker.UserService.Api", "ExpenseTracker.UserService.Api\ExpenseTracker.UserService.Api.csproj", "{59EF3FB5-C636-4D9F-83F9-E40AFCA093A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{93F8BE39-5E36-4702-C257-DF9823CA6816}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93F8BE39-5E36-4702-C257-DF9823CA6816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93F8BE39-5E36-4702-C257-DF9823CA6816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59EF3FB5-C636-4D9F-83F9-E40AFCA093A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59EF3FB5-C636-4D9F-83F9-E40AFCA093A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59EF3FB5-C636-4D9F-83F9-E40AFCA093A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59EF3FB5-C636-4D9F-83F9-E40AFCA093A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
