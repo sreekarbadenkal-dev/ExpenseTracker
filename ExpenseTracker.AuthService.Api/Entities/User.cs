@@ -21,6 +21,8 @@ namespace ExpenseTracker.AuthService.Api.Entities
 
         public DateTime? EmailVerifiedAt { get; set; }
 
+        public string? PhoneNumber { get; set; }
+
         public DateTime CreatedAt { get; set; }
 
         public DateTime LastUpdatedAt { get; set; }

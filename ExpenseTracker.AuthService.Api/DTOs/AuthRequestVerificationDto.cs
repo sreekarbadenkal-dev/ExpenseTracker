@@ -17,6 +17,7 @@ namespace ExpenseTracker.AuthService.Api.DTOs
 
         [Required]
         public Guid Userid { get; set; }
+
         [Required]
         public int OtpPurpose { get; set; }
     }

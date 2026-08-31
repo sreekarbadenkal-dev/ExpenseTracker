@@ -48,7 +48,7 @@ namespace ExpenseTracker.AuthService.Api.Services
 
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(req.Password);
 
-            var user = new User { UserId = Guid.NewGuid(), Email = req.Email, PasswordHash = passwordHash };
+            var user = new User { UserId = Guid.NewGuid(), Email = req.Email, PasswordHash = passwordHash, PhoneNumber = req.PhoneNumber };
 
             var jwtToken = CreateJwtToken(user);
 

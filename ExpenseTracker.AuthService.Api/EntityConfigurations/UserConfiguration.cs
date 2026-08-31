@@ -12,6 +12,7 @@ namespace ExpenseTracker.AuthService.Api.EntityConfigurations
             builder.Property(user => user.LastUpdatedAt).HasDefaultValueSql("GETUTCDATE()");
 
             builder.HasQueryFilter(user => user.DeletedAt == null);
+            builder.Property(user => user.PhoneNumber).HasMaxLength(15).IsRequired(false);
         }
     }
 }

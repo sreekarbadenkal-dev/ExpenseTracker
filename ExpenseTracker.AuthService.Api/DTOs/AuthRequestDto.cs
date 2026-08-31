@@ -12,5 +12,8 @@ namespace ExpenseTracker.AuthService.Api.DTOs
         [Required]
         public string Password { get; set; } = string.Empty;
 
+        [Required]
+        public string? PhoneNumber { get; set; }
+
     }
 }
