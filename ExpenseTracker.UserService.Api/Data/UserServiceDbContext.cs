@@ -8,6 +8,11 @@ namespace ExpenseTracker.UserService.Api.Data
         public DbSet<UserProfile> Users => Set<UserProfile>();
         public DbSet<UserPreferences> Preferences => Set<UserPreferences>();
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(UserServiceDbContext).Assembly);
+        }
 
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)

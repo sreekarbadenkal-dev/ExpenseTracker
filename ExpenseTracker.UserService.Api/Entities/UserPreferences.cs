@@ -17,6 +17,7 @@ namespace ExpenseTracker.UserService.Api.Entities
         public DateFormatOptions DateFormat { get; set; } = DateFormatOptions.DdMmYyyy;
         public DateTime? CreatedAt { get; set; }
         public DateTime? LastUpdatedAt { get; set; }
+        public string Language { get; set; }
         public UserProfile UserProfile { get; set; } = null!;
     }
 }

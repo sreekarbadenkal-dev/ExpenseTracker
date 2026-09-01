@@ -14,7 +14,7 @@ namespace ExpenseTracker.UserService.Api.EntityConfigurations
             builder.Property(user=>user.UserName).HasMaxLength(100).IsRequired();
 
             builder.Property(user => user.Description).HasColumnType("nvarchar(max)");
-            builder.Property(user => user.ProfilePicture).HasColumnType("varbinary(max)");
+            builder.Property(user => user.ProfilePicture).HasMaxLength(100).IsRequired(false);
 
             builder.Property(user => user.DateOfBirth).HasColumnType("datetime2");
 

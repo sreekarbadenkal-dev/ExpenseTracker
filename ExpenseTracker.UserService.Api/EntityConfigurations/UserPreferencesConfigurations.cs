@@ -12,6 +12,7 @@ namespace ExpenseTracker.UserService.Api.EntityConfigurations
             builder.Property(pref=>pref.UserId).ValueGeneratedNever();
             builder.Property(pref=>pref.DefaultCurrency).IsRequired();
             builder.Property(pref=>pref.TimeZone).IsRequired();
+            builder.Property(pref=>pref.Language).IsRequired();
 
             builder.Property(pref=>pref.DateFormat).HasConversion<string>().HasMaxLength(10).IsRequired();
 
