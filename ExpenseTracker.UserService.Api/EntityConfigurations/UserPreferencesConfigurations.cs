@@ -19,7 +19,7 @@ namespace ExpenseTracker.UserService.Api.EntityConfigurations
             builder.Property(pref=>pref.CreatedAt).HasDefaultValueSql("GETUTCDATE()");
             builder.Property(pref=>pref.LastUpdatedAt).HasDefaultValueSql("GETUTCDATE()");
 
-            builder.HasOne(pref=>pref.UserProfile).WithOne().HasForeignKey<UserPreferences>(pref => pref.UserId).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(pref=>pref.UserProfile).WithOne().HasForeignKey<UserPreferences>(pref => pref.UserId).IsRequired(false).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

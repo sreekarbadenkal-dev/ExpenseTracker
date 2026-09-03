@@ -18,6 +18,6 @@ namespace ExpenseTracker.UserService.Api.Entities
         public DateTime? CreatedAt { get; set; }
         public DateTime? LastUpdatedAt { get; set; }
         public string Language { get; set; }
-        public UserProfile UserProfile { get; set; } = null!;
+        public UserProfile? UserProfile { get; set; } = null!;
     }
 }

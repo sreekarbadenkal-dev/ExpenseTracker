@@ -5,7 +5,7 @@ namespace ExpenseTracker.UserService.Api.Data
 {
     public class UserServiceDbContext(DbContextOptions<UserServiceDbContext> options) : DbContext(options)
     {
-        public DbSet<UserProfile> Users => Set<UserProfile>();
+        public DbSet<UserProfile> Profiles => Set<UserProfile>();
         public DbSet<UserPreferences> Preferences => Set<UserPreferences>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
