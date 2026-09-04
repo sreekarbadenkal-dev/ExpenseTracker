@@ -85,8 +85,7 @@ namespace ExpenseTracker.UserService.Api.Migrations
                         .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<string>("ProfilePicture")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
                         .IsRequired()

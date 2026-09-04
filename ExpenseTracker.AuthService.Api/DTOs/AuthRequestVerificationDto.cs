@@ -16,7 +16,7 @@ namespace ExpenseTracker.AuthService.Api.DTOs
         public string Otp {  get; set; } = string.Empty;
 
         [Required]
-        public Guid Userid { get; set; }
+        public string Email {  get; set; } = string.Empty;
 
         [Required]
         public int OtpPurpose { get; set; }

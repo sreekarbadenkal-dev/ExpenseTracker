@@ -5,6 +5,7 @@ using ExpenseTracker.UserService.Api.Entities;
 using ExpenseTracker.UserService.Api.Exceptions;
 using ExpenseTracker.UserService.Api.Services.Media;
 using Microsoft.EntityFrameworkCore;
+using ExpenseTracker.UserService.Api.Common;
 
 namespace ExpenseTracker.UserService.Api
 {
@@ -12,6 +13,7 @@ namespace ExpenseTracker.UserService.Api
     {
         private readonly UserServiceDbContext _context = context;
         private readonly IMediaService _mediaService = mediaService;
+
 
         public async Task<ProfileResDto> getProfile(Guid userId)
         {
@@ -87,9 +89,13 @@ namespace ExpenseTracker.UserService.Api
                     var result = await _mediaService.UploadImageAsync(req.ProfilePicture, "expense-tracker/profiles");
                     profile.ProfilePicture = result.Url;
                 }
+                else
+                {
+                    profile.ProfilePicture = SvgAvatarGenerator.CreatePlaceholderProfile(profile.UserName, 128);
+                }
 
 
-                await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
 
                 return true;
             }

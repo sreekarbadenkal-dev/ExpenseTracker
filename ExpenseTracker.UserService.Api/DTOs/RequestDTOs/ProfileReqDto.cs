@@ -8,6 +8,7 @@ namespace ExpenseTracker.UserService.Api.DTOs.RequestDTOs
         public Guid UserId { get; set; }
 
         [Required]
+        [MinLength(2)]
         public string UserName { get; set; } 
 
         public string? Description { get; set; }

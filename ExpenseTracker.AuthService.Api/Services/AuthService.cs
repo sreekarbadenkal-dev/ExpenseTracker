@@ -94,7 +94,7 @@ namespace ExpenseTracker.AuthService.Api.Services
 
         public async Task<bool> VerifyEmail(AuthRequestVerificationDto authverifyreq)
         {
-            var user = await _db.Users.FirstOrDefaultAsync(user=>user.UserId==authverifyreq.Userid);
+            var user = await _db.Users.FirstOrDefaultAsync(user=>user.Email==authverifyreq.Email);
 
             if (user == null) throw new AuthException(404, "User does not exsist", 0);
 
