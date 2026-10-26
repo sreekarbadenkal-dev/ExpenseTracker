@@ -1,0 +1,6 @@
+@ExpenseTracker.DeviceConsentService.Api_HostAddress = http://localhost:5150
+
+GET {{ExpenseTracker.DeviceConsentService.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
